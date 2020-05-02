@@ -2,6 +2,9 @@
 
 bitcoin-core/secp256k1 working with react-native.
 
+Using https://github.com/bitcoin-core/secp256k1 for iOS.
+Using https://github.com/ACINQ/secp256k1/tree/master/src/java for Android.
+
 ## Getting started
 
 `$ npm install react-native-secp256k1 --save`
