@@ -4,7 +4,7 @@ import { NativeModules } from 'react-native';
 const { RNSecp256k1, RNSecp256k1Ext } = NativeModules;
 
 
-////////////////////////////////////// hex /////////////////////////////////////
+//////////////////////////////////// hex /////////////////////////////////////
 function to_hex_value(c) {
   if (c >= 0x30 && c <= 0x39) return c - 0x30;
   if (c >= 0x41 && c <= 0x5A) return (c - 0x41) + 10;
