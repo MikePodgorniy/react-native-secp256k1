@@ -1,7 +1,7 @@
 {
   "name": "react-native-secp256k1",
   "title": "React Native Secp256k1",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "bitcoin-core/secp256k1 working with react-native",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/github_account/react-native-secp256k1.git",
-    "baseUrl": "https://github.com/github_account/react-native-secp256k1"
+    "url": "git+https://github.com/Slals/react-native-secp256k1.git",
+    "baseUrl": "https://github.com/Slals/react-native-secp256k1"
   },
   "keywords": [
     "react-native"
