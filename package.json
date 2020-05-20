@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "grep -e url -e path .gitmodules | sed 's/.*= //' | while read path; do read url; git clone $url $path/.; done"
+    "postinstall": "grep -e url -e path .gitmodules | sed 's/.*= //' | while read path; do read url; if [  -z \"$(ls -A $path)\" ]; then git clone $url $path/.; fi; done"
   },
   "repository": {
     "type": "git",
