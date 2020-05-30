@@ -106,55 +106,55 @@ RNSecp256k1.base64_decode = function (str) {
 
 //////////////////////////////// raw interface ////////////////////////////////
 RNSecp256k1.raw_verify = async function (data, signature, pub) {
-  const bData = base64_encode(data);
-  const bSig = base64_encode(signature);
-  const bPub = base64_encode(pub);
+  const bData = RNSecp256k1.base64_encode(data);
+  const bSig = RNSecp256k1.base64_encode(signature);
+  const bPub = RNSecp256k1.base64_encode(pub);
   return await RNSecp256k1.verify(bData, bSig, bPub);
 };
 RNSecp256k1.raw_sign = async function (data, priv) {
-  const bData = base64_encode(data);
-  const bPriv = base64_encode(priv);
+  const bData = RNSecp256k1.base64_encode(data);
+  const bPriv = RNSecp256k1.base64_encode(priv);
   const bSignature = await RNSecp256k1.sign(bData, bPriv);
-  return base64_decode(bSignature);
+  return NSecp256k1.base64_decode(bSignature);
 };
 RNSecp256k1.raw_secKeyVerify = async function (priv) {
-  const bPriv = base64_encode(priv);
+  const bPriv = RNSecp256k1.base64_encode(priv);
   return await RNSecp256k1.secKeyVerify(bPriv);
 };
 RNSecp256k1.raw_computePubkey = async function (priv, compressed) {
-  const bPriv = base64_encode(priv);
+  const bPriv = RNSecp256k1.base64_encode(priv);
   const bPub = await RNSecp256k1.computePubkey(bPriv, compressed ? true : false);
-  return base64_decode(bPub);
+  return NSecp256k1.base64_decode(bPub);
 };
 RNSecp256k1.raw_createECDHSecret = async function (priv, pub) {
-  const bPriv = base64_encode(priv);
-  const bPub = base64_encode(pub);
+  const bPriv = RNSecp256k1.base64_encode(priv);
+  const bPub = RNSecp256k1.base64_encode(pub);
   const bSecret = await RNSecp256k1.createECDHSecret(bPriv, bPub);
-  return base64_decode(bSecret);
+  return NSecp256k1.base64_decode(bSecret);
 };
 RNSecp256k1.raw_privKeyTweakMul = async function (priv, tweak) {
-  const bPriv = base64_encode(priv);
-  const bTweak = base64_encode(tweak);
+  const bPriv = RNSecp256k1.base64_encode(priv);
+  const bTweak = RNSecp256k1.base64_encode(tweak);
   const bResult = await RNSecp256k1.privKeyTweakMul(bPriv, bTweak);
-  return base64_decode(bResult);
+  return NSecp256k1.base64_decode(bResult);
 };
 RNSecp256k1.raw_privKeyTweakAdd = async function (priv, tweak) {
-  const bPriv = base64_encode(priv);
-  const bTweak = base64_encode(tweak);
+  const bPriv = RNSecp256k1.base64_encode(priv);
+  const bTweak = RNSecp256k1.base64_encode(tweak);
   const bResult = await RNSecp256k1.privKeyTweakAdd(bPriv, bTweak);
-  return base64_decode(bResult);
+  return NSecp256k1.base64_decode(bResult);
 };
 RNSecp256k1.raw_pubKeyTweakMul = async function (pub, tweak) {
-  const bPub = base64_encode(pub);
-  const bTweak = base64_encode(tweak);
+  const bPub = RNSecp256k1.base64_encode(pub);
+  const bTweak = RNSecp256k1.base64_encode(tweak);
   const bResult = await RNSecp256k1.pubKeyTweakMul(bPub, bTweak);
-  return base64_decode(bResult);
+  return NSecp256k1.base64_decode(bResult);
 };
 RNSecp256k1.raw_pubKeyTweakAdd = async function (pub, tweak) {
-  const bPub = base64_encode(pub);
-  const bTweak = base64_encode(tweak);
+  const bPub = RNSecp256k1.base64_encode(pub);
+  const bTweak = RNSecp256k1.base64_encode(tweak);
   const bResult = await RNSecp256k1.pubKeyTweakAdd(bPub, bTweak);
-  return base64_decode(bResult);
+  return NSecp256k1.base64_decode(bResult);
 };
 
 RNSecp256k1.ext = RNSecp256k1Ext;
